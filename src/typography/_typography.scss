@@ -18,7 +18,9 @@
 @import "../mixins";
 
 @if $target-elements-directly == true {
-  html, body {
+  // was once html, body {
+  // hacked to div for sake of shadow-dom support
+  div {
     font-family: $performance_font;
     font-size: 14px;
     font-weight: 400;
