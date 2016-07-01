@@ -117,7 +117,8 @@
       var forEl = null;
       if (forElId) {
         var HTMLRoot = this.element_;
-        while (HTMLRoot && HTMLRoot.toString() !== '[object ShadowRoot]') {
+        // nodeType 11 == DOCUMENT_FRAGMENT_NODE for shadow root
+        while (HTMLRoot && HTMLRoot.nodeType !== 11 && HTMLRoot.parentNode) {
           HTMLRoot = HTMLRoot.parentNode;
         }
         HTMLRoot = HTMLRoot || document;
